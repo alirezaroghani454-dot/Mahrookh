@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>ماه‌رخ | فروشگاه آنلاین لوازم آرایشی و بهداشتی</title>
+  <meta name="description" content="ماه‌رخ؛ فروشگاه آنلاین لوازم آرایشی، مراقبت پوست و مو، عطر و بهداشتی با ضمانت اصالت کالا، ارسال سریع و مشاورهٔ رایگان پوست.">
+  <meta name="theme-color" content="#120824" id="metaTheme">
+  <meta property="og:title" content="ماه‌رخ | فروشگاه آنلاین لوازم آرایشی و بهداشتی">
+  <meta property="og:description" content="اصیل‌ترین لوازم آرایشی و بهداشتی، گزینش‌شده برای پوست و سلیقهٔ تو.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fa_IR">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <!-- پیش از رندر: فعال‌سازی کلاس js و تم ذخیره‌شده تا صفحه چشمک نزند -->
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      try {
+        var t = localStorage.getItem('mahrokh:theme');
+        if (!t && window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches) t = 'dark';
+        if (t === 'dark') d.setAttribute('data-theme', 'dark');
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- فونت‌ها: وزیرمتن (متن و تیتر) و عارف رقعه (فقط لوگو). در صورت دسترسی‌نداشتن، فونت‌های سیستم جایگزین می‌شوند. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Vazirmatn:wght@300..900&display=swap">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body class="is-loading">
+
+  <!-- ========== آیکون‌های SVG (اسپرایت) ========== -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 7h12l1 13H5L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5Z"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/></symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24"><path d="M3 6h11v10H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.5 3 8 7 10 4-2 7-5.5 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-return" viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 14-5l2 2M20 12a8 8 0 0 1-14 5l-2-2M20 5v4h-4M4 19v-4h4"/></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3zM19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8L19 16z"/></symbol>
+    <symbol id="i-chev-l" viewBox="0 0 24 24"><path d="m15 6-6 6 6 6"/></symbol>
+    <symbol id="i-chev-r" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4.5 4.5L19 7"/></symbol>
+    <symbol id="i-gift" viewBox="0 0 24 24"><path d="M4 11h16v9H4zM3 8h18v3H3zM12 8v12"/><path d="M12 8S10 3 7.5 4.5 9 8 12 8Zm0 0s2-5 4.5-3.5S15 8 12 8Z"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.5"/><circle cx="17" cy="7" r=".6"/></symbol>
+    <symbol id="i-telegram" viewBox="0 0 24 24"><path d="M21 4 3 11l6 2 2 6 3-4 5 4 2-15Z"/></symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M4 20l1.3-4.2A8 8 0 1 1 8.2 18.8L4 20Z"/><path d="M9 9c0 3 3 6 6 6l1-2-2-1-1 .8c-1-.4-2-1.4-2.4-2.4L11 9.5 10 7.5 9 9Z"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11 12 4l8 7v9h-5v-6H9v6H4v-9Z"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-store" viewBox="0 0 24 24"><path d="M4 9l1.5-5h13L20 9M4 9h16v11H4zM4 9a2.7 2.7 0 0 0 5.3 0 2.7 2.7 0 0 0 5.4 0 2.7 2.7 0 0 0 5.3 0M10 20v-5h4v5"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">پرش به محتوای اصلی</a>
+
+  <noscript><div class="noscript-note">برای استفاده از فروشگاه ماه‌رخ، جاوااسکریپت مرورگر را فعال کنید.</div></noscript>
+
+  <!-- ========== پیش‌بارگذاری (فازهای ماه) ========== -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="pre__moon"></div>
+    <div class="pre__word">ماه‌رخ</div>
+    <div class="pre__bar"><i id="preBar"></i></div>
+  </div>
+
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <!-- ========== نوار اعلان ========== -->
+  <div class="announce" id="announce" role="region" aria-label="اعلان‌ها">
+    <div class="container announce__row">
+      <span class="announce__msg" id="announceMsg">ارسال رایگان برای سفارش‌های بالای ۱٫۵ میلیون تومان</span>
+      <button class="announce__close" id="announceClose" aria-label="بستن نوار اعلان">
+        <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- ========== هدر ========== -->
+  <header class="header" id="header">
+    <div class="container header__row">
+      <button class="icon-btn header__menu-btn" id="menuBtn" data-open="menu" aria-label="باز کردن منو" aria-expanded="false" aria-controls="mobileMenu">
+        <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>
+      </button>
+
+      <a class="logo" href="#top" aria-label="ماه‌رخ — صفحهٔ اصلی">
+        <svg class="logo__mark" viewBox="0 0 48 48" aria-hidden="true">
+          <defs><linearGradient id="logoGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f08cc8"/><stop offset="1" stop-color="#7a3fb5"/></linearGradient></defs>
+          <circle cx="24" cy="24" r="22" fill="url(#logoGrad)"/>
+          <path d="M33 12a15 15 0 1 0 0 24 12 12 0 0 1 0-24Z" fill="#fff" opacity=".96"/>
+          <circle cx="35" cy="14" r="2.3" fill="#78e6d6"/>
+        </svg>
+        <span class="logo__word">ماه‌رخ</span>
+      </a>
+
+      <nav class="nav" aria-label="منوی اصلی">
+        <a class="nav__link" href="#categories">دسته‌بندی‌ها</a>
+        <a class="nav__link" href="#flash">حراج ویژه</a>
+        <a class="nav__link" href="#shop">فروشگاه</a>
+        <a class="nav__link" href="#quiz">مشاورهٔ پوست</a>
+        <a class="nav__link" href="#magazine">مجله</a>
+        <a class="nav__link" href="#contact">تماس</a>
+      </nav>
+
+      <div class="header__actions">
+        <button class="icon-btn" id="searchBtn" data-open="search" aria-label="جستجو">
+          <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+        </button>
+        <button class="icon-btn theme-btn" id="themeBtn" aria-label="تغییر تم روشن و تاریک">
+          <svg class="icon icon-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+          <svg class="icon icon-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+        </button>
+        <button class="icon-btn wish-btn" id="wishBtn" data-open="wish" aria-label="علاقه‌مندی‌ها">
+          <svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg>
+          <span class="count-badge" data-count="wish" data-zero="true">۰</span>
+        </button>
+        <button class="icon-btn" id="cartBtn" data-open="cart" aria-label="سبد خرید">
+          <svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg>
+          <span class="count-badge" data-count="cart" data-zero="true">۰</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ========== قهرمان (Hero) با ماهِ سه‌بعدی WebGL ========== -->
+    <section class="hero" id="top" aria-label="معرفی ماه‌رخ">
+      <canvas class="hero__canvas" id="heroCanvas" aria-hidden="true"></canvas>
+      <div class="hero__fallback" aria-hidden="true"></div>
+
+      <div class="hero__chips" id="heroChips"></div>
+
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <h1 class="hero__title" id="heroTitle" style="--n:0">ماه‌رخ شو؛ زیبایی‌ات را نورانی کن</h1>
+          <p class="hero__lead" style="--n:1">اصیل‌ترین لوازم آرایشی و بهداشتی، گزینش‌شده برای پوست و سلیقهٔ تو؛ با ضمانت اصالت کالا، ارسال سریع و مشاورهٔ رایگان.</p>
+          <div class="hero__cta" style="--n:2">
+            <a class="btn btn--light" href="#shop">
+              شروع خرید
+              <svg class="icon" aria-hidden="true"><use href="#i-chev-l"/></svg>
+            </a>
+            <a class="btn btn--outline-light" href="#quiz">مشاورهٔ رایگان پوست</a>
+          </div>
+          <ul class="hero__trust" style="--n:3">
+            <li><span class="icon-wrap"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></span>ضمانت اصالت کالا</li>
+            <li><span class="icon-wrap"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg></span>ارسال سریع به سراسر کشور</li>
+            <li><span class="icon-wrap"><svg class="icon" aria-hidden="true"><use href="#i-return"/></svg></span>۷ روز مهلت بازگشت</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="hero__scroll" aria-hidden="true"><span></span></div>
+    </section>
+
+    <!-- ========== نوار برندها ========== -->
+    <section class="marquee" aria-label="برندهای همکار">
+      <div class="marquee__track" id="brandTrack"></div>
+    </section>
+
+    <!-- ========== دسته‌بندی‌ها (حلقهٔ سه‌بعدی) ========== -->
+    <section class="sec sec--tint ring-sec" id="categories" aria-labelledby="catTitle">
+      <div class="container">
+        <header class="sec-head" data-reveal>
+          <h2 class="sec-title" id="catTitle">دنیای زیبایی، در یک حلقه</h2>
+          <p class="sec-sub">حلقه را بچرخان و هر دسته‌ای که دوست داری باز کن؛ از رژلب و مراقبت پوست تا عطر و لاک.</p>
+        </header>
+
+        <div class="ring" id="ring">
+          <div class="ring__stage" id="ringStage" role="group" aria-roledescription="چرخ‌وفلک" aria-label="دسته‌بندی محصولات">
+            <div class="ring__track" id="ringTrack"></div>
+            <div class="ring__floor" aria-hidden="true"></div>
+          </div>
+          <div class="ring__controls">
+            <button class="arrow-btn" id="ringPrev" aria-label="دستهٔ قبلی"><svg class="icon" aria-hidden="true"><use href="#i-chev-r"/></svg></button>
+            <span class="ring__hint">بکشید یا بچرخانید</span>
+            <button class="arrow-btn" id="ringNext" aria-label="دستهٔ بعدی"><svg class="icon" aria-hidden="true"><use href="#i-chev-l"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== حراج ویژه ========== -->
+    <section class="sec flash" id="flash" aria-labelledby="flashTitle">
+      <div class="container">
+        <div class="flash__head">
+          <header class="sec-head" data-reveal>
+            <h2 class="sec-title" id="flashTitle">حراج ویژهٔ امشب</h2>
+            <p class="sec-sub">پیشنهادهای محدود با تخفیف واقعی؛ تا پایان امروز فرصت داری.</p>
+          </header>
+          <div class="flash__side" data-reveal>
+            <div class="countdown" role="timer" aria-label="زمان باقی‌مانده تا پایان حراج">
+              <div class="cd"><div class="cd__box"><div class="cd__num" id="cdH">۰۰</div></div><span class="cd__label">ساعت</span></div>
+              <span class="cd__sep" aria-hidden="true">:</span>
+              <div class="cd"><div class="cd__box"><div class="cd__num" id="cdM">۰۰</div></div><span class="cd__label">دقیقه</span></div>
+              <span class="cd__sep" aria-hidden="true">:</span>
+              <div class="cd"><div class="cd__box"><div class="cd__num" id="cdS">۰۰</div></div><span class="cd__label">ثانیه</span></div>
+            </div>
+            <div class="arrows">
+              <button class="arrow-btn" id="flashPrev" aria-label="قبلی"><svg class="icon" aria-hidden="true"><use href="#i-chev-r"/></svg></button>
+              <button class="arrow-btn" id="flashNext" aria-label="بعدی"><svg class="icon" aria-hidden="true"><use href="#i-chev-l"/></svg></button>
+            </div>
+          </div>
+        </div>
+        <div class="hscroll" id="flashTrack" tabindex="0" aria-label="محصولات حراج ویژه"></div>
+      </div>
+    </section>
+
+    <!-- ========== فروشگاه ========== -->
+    <section class="sec" id="shop" aria-labelledby="shopTitle">
+      <div class="container">
+        <header class="sec-head" data-reveal>
+          <h2 class="sec-title" id="shopTitle">همهٔ محصولات ماه‌رخ</h2>
+          <p class="sec-sub">جستجو کن، فیلتر بزن و مرتب کن؛ هر محصول را می‌توانی قبل از خرید در نمای سه‌بعدی ببینی.</p>
+        </header>
+
+        <div class="shop-bar">
+          <div class="shop-bar__top">
+            <div class="search-field">
+              <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+              <label class="sr-only" for="shopSearch">جستجو در محصولات</label>
+              <input class="input" id="shopSearch" type="search" placeholder="نام محصول یا برند را بنویس…" autocomplete="off">
+            </div>
+            <div>
+              <label class="sr-only" for="sortSelect">مرتب‌سازی</label>
+              <select class="input" id="sortSelect">
+                <option value="pop">محبوب‌ترین</option>
+                <option value="new">جدیدترین</option>
+                <option value="cheap">ارزان‌ترین</option>
+                <option value="exp">گران‌ترین</option>
+                <option value="rate">بیشترین امتیاز</option>
+                <option value="off">بیشترین تخفیف</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="chips" id="catChips" role="group" aria-label="فیلتر دسته‌بندی"></div>
+
+          <div class="filters">
+            <div class="filter-price">
+              <div class="filter-price__top">
+                <label for="priceMax">حداکثر قیمت</label>
+                <output id="priceOut" for="priceMax">—</output>
+              </div>
+              <input type="range" id="priceMax" min="0" max="100" step="1" value="100">
+            </div>
+            <label class="filter-check"><input type="checkbox" id="inStock"> فقط کالاهای موجود</label>
+            <span class="result-count" id="resultCount" aria-live="polite"></span>
+            <button class="btn btn--ghost btn--sm" id="resetFilters" type="button">پاک‌کردن فیلترها</button>
+          </div>
+        </div>
+
+        <div class="pgrid" id="productGrid" aria-live="polite"></div>
+
+        <div class="more"><button class="btn btn--ghost" id="loadMore" type="button">نمایش محصولات بیشتر</button></div>
+      </div>
+    </section>
+
+    <!-- ========== مشاور پوست ========== -->
+    <section class="sec--tint quiz-sec" id="quiz" aria-labelledby="quizTitle">
+      <div class="container">
+        <div class="quiz" data-reveal="scale">
+          <header class="sec-head">
+            <h2 class="sec-title" id="quizTitle">مشاورهٔ رایگان پوست</h2>
+            <p class="sec-sub">با چهار سؤال کوتاه، محصولاتی را که به پوست و برنامهٔ تو می‌خورند پیشنهاد می‌دهیم.</p>
+          </header>
+          <div class="quiz__box" id="quizBox" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== چرا ماه‌رخ ========== -->
+    <section class="sec" id="why" aria-labelledby="whyTitle">
+      <div class="container">
+        <header class="sec-head sec-head--center" data-reveal>
+          <h2 class="sec-title" id="whyTitle">چرا ماه‌رخ؟</h2>
+          <p class="sec-sub">چون خرید زیبایی باید ساده، مطمئن و دلپذیر باشد.</p>
+        </header>
+
+        <!-- متن‌ها و عددها نمونه‌اند؛ پیش از انتشار با اطلاعات واقعی فروشگاه جایگزین شوند. -->
+        <div class="why__grid">
+          <article class="why__item" data-reveal style="--d:0">
+            <span class="why__icon"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></span>
+            <h3>ضمانت اصالت کالا</h3>
+            <p>همهٔ محصولات از تأمین‌کنندگان رسمی تهیه می‌شوند و اصالتشان تضمین است.</p>
+          </article>
+          <article class="why__item" data-reveal style="--d:1">
+            <span class="why__icon"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg></span>
+            <h3>ارسال سریع</h3>
+            <p>سفارش‌های تهران با پیک و سایر شهرها با پست پیشتاز، سریع به دستت می‌رسد.</p>
+          </article>
+          <article class="why__item" data-reveal style="--d:2">
+            <span class="why__icon"><svg class="icon" aria-hidden="true"><use href="#i-return"/></svg></span>
+            <h3>۷ روز مهلت بازگشت</h3>
+            <p>اگر محصول با انتظارت نخواند، تا هفت روز می‌توانی آن را مرجوع کنی.</p>
+          </article>
+          <article class="why__item" data-reveal style="--d:3">
+            <span class="why__icon"><svg class="icon" aria-hidden="true"><use href="#i-sparkle"/></svg></span>
+            <h3>مشاورهٔ رایگان</h3>
+            <p>کارشناسان ما در انتخاب محصول مناسب پوست، مو و سلیقهٔ تو کنارت هستند.</p>
+          </article>
+        </div>
+
+        <div class="stats" data-reveal>
+          <div class="stat"><b data-count-to="12000" data-suffix="+">۰</b><span>مشتری راضی</span></div>
+          <div class="stat"><b data-count-to="800" data-suffix="+">۰</b><span>محصول اصل</span></div>
+          <div class="stat"><b data-count-to="120" data-suffix="+">۰</b><span>برند معتبر</span></div>
+          <div class="stat"><b data-count-to="24" data-suffix="">۰</b><span>ساعت پاسخ‌گویی به پیام‌ها</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== بنر ویژه با مکعب سه‌بعدی ========== -->
+    <section class="promo-sec" aria-labelledby="promoTitle">
+      <div class="container">
+        <div class="promo" data-reveal="scale">
+          <div class="promo__text">
+            <h2 id="promoTitle">اولین خریدت را درخشان‌تر کن</h2>
+            <p>با کد تخفیف زیر، ۱۰٪ تخفیف روی سفارشت بگیر (تا سقف ۳۰۰ هزار تومان). کد را در سبد خرید وارد کن.</p>
+            <div class="promo__code">
+              <span id="promoCode">MAHROKH10</span>
+              <button class="btn btn--light btn--sm" id="copyCode" type="button">
+                <svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg>کپی کد
+              </button>
+            </div>
+          </div>
+          <div class="cube-scene" aria-hidden="true"><div class="cube" id="cube"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== نظرات مشتریان ========== -->
+    <section class="sec sec--tint" id="reviews" aria-labelledby="revTitle">
+      <div class="container">
+        <header class="sec-head" data-reveal>
+          <h2 class="sec-title" id="revTitle">مشتری‌ها چه می‌گویند</h2>
+        </header>
+        <!-- نظرها نمونه‌اند؛ با نظرهای واقعی مشتریان جایگزین شوند. -->
+        <div class="rev" data-reveal>
+          <div class="rev__viewport" id="revViewport" role="region" aria-roledescription="اسلایدر" aria-label="نظرات مشتریان">
+            <div class="rev__track" id="reviewTrack"></div>
+          </div>
+          <div class="rev__nav">
+            <div class="dots" id="reviewDots"></div>
+            <div class="arrows">
+              <button class="arrow-btn" id="reviewPrev" aria-label="نظر قبلی"><svg class="icon" aria-hidden="true"><use href="#i-chev-r"/></svg></button>
+              <button class="arrow-btn" id="reviewNext" aria-label="نظر بعدی"><svg class="icon" aria-hidden="true"><use href="#i-chev-l"/></svg></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== مجلهٔ زیبایی ========== -->
+    <section class="sec" id="magazine" aria-labelledby="magTitle">
+      <div class="container">
+        <header class="sec-head" data-reveal>
+          <h2 class="sec-title" id="magTitle">مجلهٔ زیبایی ماه‌رخ</h2>
+          <p class="sec-sub">نکته‌های کوتاه و کاربردی برای مراقبت از پوست، انتخاب رنگ و استفادهٔ درست از محصولات.</p>
+        </header>
+        <div class="mag-grid" id="articleGrid"></div>
+      </div>
+    </section>
+
+    <!-- ========== خبرنامه ========== -->
+    <section class="sec sec--tint" id="newsletter" aria-labelledby="newsTitle">
+      <div class="container">
+        <div class="news" data-reveal="scale">
+          <div>
+            <h2 id="newsTitle">اولین نفری باش که از تخفیف‌ها خبردار می‌شود</h2>
+            <p>ایمیلت را بنویس تا حراج‌های ویژه و نکته‌های زیبایی را برایت بفرستیم. هر وقت خواستی می‌توانی لغو کنی.</p>
+          </div>
+          <form class="news__form" id="newsForm" novalidate>
+            <div class="news__row">
+              <label class="sr-only" for="newsEmail">ایمیل</label>
+              <input class="input" id="newsEmail" type="email" inputmode="email" autocomplete="email" placeholder="example@email.com" dir="ltr" style="text-align:start">
+              <button class="btn" type="submit">عضویت در خبرنامه</button>
+            </div>
+            <div class="news__msg" id="newsMsg" role="status"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== فوتر ========== -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__about">
+          <a class="logo" href="#top" aria-label="ماه‌رخ">
+            <svg class="logo__mark" viewBox="0 0 48 48" aria-hidden="true">
+              <circle cx="24" cy="24" r="22" fill="url(#logoGrad)"/>
+              <path d="M33 12a15 15 0 1 0 0 24 12 12 0 0 1 0-24Z" fill="#fff" opacity=".96"/>
+              <circle cx="35" cy="14" r="2.3" fill="#78e6d6"/>
+            </svg>
+            <span class="logo__word">ماه‌رخ</span>
+          </a>
+          <p>ماه‌رخ فروشگاه آنلاین لوازم آرایشی، مراقبت پوست و مو و عطر است؛ با تمرکز بر اصالت کالا و تجربهٔ خرید دلپذیر.</p>
+          <div class="footer__social">
+            <a href="#" aria-label="اینستاگرام ماه‌رخ"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg></a>
+            <a href="#" aria-label="تلگرام ماه‌رخ"><svg class="icon" aria-hidden="true"><use href="#i-telegram"/></svg></a>
+            <a href="#" aria-label="واتس‌اپ ماه‌رخ"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg></a>
+          </div>
+        </div>
+
+        <div>
+          <h3>دسترسی سریع</h3>
+          <ul class="footer__links">
+            <li><a href="#categories">دسته‌بندی‌ها</a></li>
+            <li><a href="#flash">حراج ویژه</a></li>
+            <li><a href="#shop">فروشگاه</a></li>
+            <li><a href="#quiz">مشاورهٔ پوست</a></li>
+            <li><a href="#magazine">مجلهٔ زیبایی</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>خدمات مشتریان</h3>
+          <ul class="footer__links">
+            <li><a href="#why">ضمانت اصالت کالا</a></li>
+            <li><a href="#why">شرایط بازگشت کالا</a></li>
+            <li><a href="#why">روش‌های ارسال</a></li>
+            <li><a href="#newsletter">خبرنامه</a></li>
+          </ul>
+        </div>
+
+        <!-- اطلاعات تماس نمونه است؛ با اطلاعات واقعی جایگزین شود. -->
+        <div>
+          <h3>تماس با ما</h3>
+          <ul class="footer__contact">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span>۰۲۱-۱۲۳۴۵۶۷۸</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><span dir="ltr">info@mahrokh.example</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span>تهران، خیابان ولیعصر، پلاک ۱۲۳</span></li>
+          </ul>
+          <!-- جای نماد اعتماد الکترونیک (اینماد): کد اصلی را پس از دریافت اینجا قرار دهید. -->
+        </div>
+      </div>
+
+      <div class="footer__bar">
+        <span>© تمامی حقوق برای ماه‌رخ محفوظ است.</span>
+        <span>ساخته‌شده با ❤ برای زیبایی شما</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== لایه‌های روی صفحه ========== -->
+  <div class="backdrop" id="backdrop"></div>
+
+  <!-- منوی موبایل -->
+  <aside class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="منوی سایت" aria-hidden="true">
+    <div class="mobile-menu__head">
+      <a class="logo" href="#top" data-close aria-label="ماه‌رخ">
+        <svg class="logo__mark" viewBox="0 0 48 48" aria-hidden="true">
+          <circle cx="24" cy="24" r="22" fill="url(#logoGrad)"/>
+          <path d="M33 12a15 15 0 1 0 0 24 12 12 0 0 1 0-24Z" fill="#fff" opacity=".96"/>
+          <circle cx="35" cy="14" r="2.3" fill="#78e6d6"/>
+        </svg>
+        <span class="logo__word">ماه‌رخ</span>
+      </a>
+      <button class="icon-btn" data-close aria-label="بستن منو"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+    <nav class="mobile-menu__links" aria-label="منوی موبایل">
+      <a href="#categories" data-close>دسته‌بندی‌ها <svg class="icon" aria-hidden="true"><use href="#i-chev-l"/></svg></a>
+      <a href="#flash" data-close>حراج ویژه <svg class="icon" aria-hidden="true"><use href="#i-chev-l"/></svg></a>
+      <a href="#shop" data-close>فروشگاه <svg class="icon" aria-hidden="true"><use href="#i-chev-l"/></svg></a>
+      <a href="#quiz" data-close>مشاورهٔ پوست <svg class="icon" aria-hidden="true"><use href="#i-chev-l"/></svg></a>
+      <a href="#magazine" data-close>مجله <svg class="icon" aria-hidden="true"><use href="#i-chev-l"/></svg></a>
+      <a href="#contact" data-close>تماس با ما <svg class="icon" aria-hidden="true"><use href="#i-chev-l"/></svg></a>
+    </nav>
+    <div class="mobile-menu__foot">
+      <button class="btn btn--ghost btn--block" id="menuTheme" type="button">تغییر تم روشن و تاریک</button>
+      <span>پشتیبانی: ۰۲۱-۱۲۳۴۵۶۷۸</span>
+    </div>
+  </aside>
+
+  <!-- سبد خرید -->
+  <aside class="drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle" aria-hidden="true">
+    <div class="drawer__head">
+      <h2 class="drawer__title" id="cartTitle"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg>سبد خرید</h2>
+      <button class="icon-btn" data-close aria-label="بستن سبد خرید"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+    <div class="drawer__body" id="cartBody"></div>
+    <div class="drawer__foot" id="cartFoot"></div>
+  </aside>
+
+  <!-- علاقه‌مندی‌ها -->
+  <aside class="drawer" id="wishDrawer" role="dialog" aria-modal="true" aria-labelledby="wishTitle" aria-hidden="true">
+    <div class="drawer__head">
+      <h2 class="drawer__title" id="wishTitle"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg>علاقه‌مندی‌ها</h2>
+      <button class="icon-btn" data-close aria-label="بستن علاقه‌مندی‌ها"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+    <div class="drawer__body" id="wishBody"></div>
+  </aside>
+
+  <!-- جستجوی سراسری -->
+  <div class="search" id="searchOverlay" role="dialog" aria-modal="true" aria-label="جستجوی محصولات" aria-hidden="true">
+    <div class="search__box">
+      <div class="search__bar">
+        <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+        <label class="sr-only" for="searchInput">جستجو</label>
+        <input class="search__input" id="searchInput" type="search" placeholder="رژلب، سرم، عطر، ضدآفتاب…" autocomplete="off">
+        <button class="icon-btn" id="searchClose" aria-label="بستن جستجو"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+      </div>
+      <div class="search__body" id="searchResults"></div>
+    </div>
+  </div>
+
+  <!-- نمای سریع محصول -->
+  <div class="modal" id="quickView" role="dialog" aria-modal="true" aria-label="مشاهدهٔ سریع محصول" aria-hidden="true">
+    <div class="modal__dialog">
+      <button class="modal__close" data-close aria-label="بستن"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+      <div id="qvContent"></div>
+    </div>
+  </div>
+
+  <!-- تسویه حساب -->
+  <div class="modal" id="checkoutModal" role="dialog" aria-modal="true" aria-label="تکمیل سفارش" aria-hidden="true">
+    <div class="modal__dialog">
+      <button class="modal__close" data-close aria-label="بستن"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+      <div id="checkoutBody"></div>
+    </div>
+  </div>
+
+  <!-- مودال اطلاعات (مقالات مجله) -->
+  <div class="modal" id="infoModal" role="dialog" aria-modal="true" aria-label="مقاله" aria-hidden="true">
+    <div class="modal__dialog" style="max-width:760px">
+      <button class="modal__close" data-close aria-label="بستن"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+      <div id="infoContent"></div>
+    </div>
+  </div>
+
+  <div class="toasts" id="toasts" aria-live="polite" aria-atomic="false"></div>
+
+  <button class="to-top" id="toTop" aria-label="بازگشت به بالای صفحه"><svg class="icon" aria-hidden="true"><use href="#i-up"/></svg></button>
+
+  <!-- ناوبری پایین (موبایل) -->
+  <nav class="bottom-nav" id="bottomNav" aria-label="ناوبری سریع">
+    <a class="bottom-nav__btn" href="#top" data-nav="top"><svg class="icon" aria-hidden="true"><use href="#i-home"/></svg>خانه</a>
+    <a class="bottom-nav__btn" href="#categories" data-nav="categories"><svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg>دسته‌ها</a>
+    <a class="bottom-nav__btn" href="#shop" data-nav="shop"><svg class="icon" aria-hidden="true"><use href="#i-store"/></svg>فروشگاه</a>
+    <button class="bottom-nav__btn" data-open="wish" aria-label="علاقه‌مندی‌ها">
+      <svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg>علاقه‌مندی
+      <span class="count-badge" data-count="wish" data-zero="true">۰</span>
+    </button>
+    <button class="bottom-nav__btn" data-open="cart" aria-label="سبد خرید">
+      <svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg>سبد خرید
+      <span class="count-badge" data-count="cart" data-zero="true">۰</span>
+    </button>
+  </nav>
+
+  <!-- اسکریپت‌ها: به ترتیب بارگذاری می‌شوند (هر فایل یک وظیفه دارد) -->
+  <script defer src="js/core/utils.js"></script>
+  <script defer src="js/core/storage.js"></script>
+  <script defer src="js/data/products.js"></script>
+  <script defer src="js/data/content.js"></script>
+  <script defer src="js/ui/art.js"></script>
+  <script defer src="js/core/cart.js"></script>
+  <script defer src="js/core/wishlist.js"></script>
+  <script defer src="js/ui/toast.js"></script>
+  <script defer src="js/ui/overlay.js"></script>
+  <script defer src="js/ui/theme.js"></script>
+  <script defer src="js/ui/preloader.js"></script>
+  <script defer src="js/ui/header.js"></script>
+  <script defer src="js/ui/reveal.js"></script>
+  <script defer src="js/ui/cursor.js"></script>
+  <script defer src="js/3d/tilt.js"></script>
+  <script defer src="js/3d/hero.js"></script>
+  <script defer src="js/3d/ring.js"></script>
+  <script defer src="js/shop/card.js"></script>
+  <script defer src="js/shop/shop.js"></script>
+  <script defer src="js/shop/flash.js"></script>
+  <script defer src="js/shop/quickview.js"></script>
+  <script defer src="js/shop/cartUI.js"></script>
+  <script defer src="js/shop/wishlistUI.js"></script>
+  <script defer src="js/shop/search.js"></script>
+  <script defer src="js/shop/checkout.js"></script>
+  <script defer src="js/shop/actions.js"></script>
+  <script defer src="js/features/countdown.js"></script>
+  <script defer src="js/features/quiz.js"></script>
+  <script defer src="js/features/reviews.js"></script>
+  <script defer src="js/features/magazine.js"></script>
+  <script defer src="js/features/newsletter.js"></script>
+  <script defer src="js/features/extras.js"></script>
+  <script defer src="js/main.js"></script>
+
+  <!-- شبکهٔ ایمنی: اگر به هر دلیل اسکریپت‌ها کامل اجرا نشدند، محتوا پنهان نماند -->
+  <script>
+    setTimeout(function () {
+      document.body.classList.remove('is-loading');
+      document.body.classList.add('is-ready');
+      var p = document.getElementById('preloader');
+      if (p) p.classList.add('is-done');
+    }, 7000);
+  </script>
+</body>
+</html>

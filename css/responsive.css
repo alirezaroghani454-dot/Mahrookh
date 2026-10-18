@@ -1,0 +1,96 @@
+/* ==========================================================================
+   ماه‌رخ — ریسپانسیو (رویکرد موبایل‌اول)
+   پایه‌ها برای موبایل نوشته شده‌اند؛ اینجا فقط صفحه‌های بزرگ‌تر اضافه می‌شوند.
+   ========================================================================== */
+
+/* ---------- موبایل ---------- */
+@media (max-width: 767px) {
+  .bottom-nav { display: grid; }
+  .announce { font-size: 0.82rem; }
+  .announce__row { padding-inline: 44px 48px; }
+  .header__actions .wish-btn { display: none; }
+  .logo__word { font-size: 1.9rem; }
+  .hero__inner { align-items: end; padding-block: 360px 96px; }
+  .hero__chips { display: none; }
+  .hero__scroll { display: none; }
+  .hero__cta .btn { flex: 1 1 100%; }
+  .hero__trust { margin-top: 32px; }
+  .pcard { padding: 8px 8px 14px; }
+  .pcard__body { padding: 12px 4px 0; }
+  .pcard__name { font-size: 0.95rem; }
+  .pcard__quick { display: none; }
+  .pcard__wish { width: 40px; height: 40px; top: 8px; inset-inline-end: 8px; }
+  .badges { top: 10px; inset-inline-start: 10px; }
+  .cube { --s: 150px; }
+  .cd__box { width: 62px; height: 72px; }
+  .cd__num { font-size: 1.8rem; }
+  .modal { place-items: end center; padding: 0; }
+  .modal__dialog { width: 100%; max-height: 92dvh; border-radius: var(--r-lg) var(--r-lg) 0 0; transform: translateY(100%); }
+  .modal.is-open .modal__dialog { transform: none; }
+  .qv__stage { min-height: 300px; }
+}
+
+@media (max-width: 420px) {
+  .hero__title { font-size: 2.45rem; }
+  .countdown { gap: 4px; }
+  .cd__box { width: 56px; height: 66px; }
+}
+
+/* ---------- لمسی: بدون hover ---------- */
+@media (hover: none) {
+  .pcard__quick { display: none; }
+  .pcard:hover { transform: none; }
+  .why__item:hover, .article:hover { translate: none; }
+}
+
+/* ---------- تبلت به بالا ---------- */
+@media (min-width: 640px) {
+  .quiz__opts { grid-template-columns: 1fr 1fr; }
+  .news__row { flex-direction: row; }
+  .news__row .input { flex: 1; }
+  .hscroll > * { flex-basis: 268px; }
+  .stats { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (min-width: 700px) {
+  .pgrid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+  .why__grid { grid-template-columns: repeat(2, 1fr); }
+  .mag-grid { grid-template-columns: repeat(2, 1fr); }
+  .shop-bar__top { grid-template-columns: 1fr 260px; }
+}
+
+@media (min-width: 800px) {
+  .qv { grid-template-columns: 1fr 1fr; }
+  .qv__stage { min-height: 100%; }
+  .co { grid-template-columns: 1.25fr 1fr; }
+}
+
+@media (min-width: 900px) {
+  .quiz { grid-template-columns: 0.85fr 1.15fr; }
+  .promo { grid-template-columns: 1.2fr 0.8fr; }
+  .news { grid-template-columns: 1fr 1fr; }
+  .footer__grid { grid-template-columns: 1.5fr 1fr 1fr 1.3fr; }
+  .review { grid-template-columns: 1fr; }
+}
+
+/* ---------- لپ‌تاپ و دسکتاپ ---------- */
+@media (min-width: 1024px) {
+  .nav { display: flex; align-items: center; gap: 2px; justify-self: center; }
+  .header__row { grid-template-columns: auto 1fr auto; }
+  .logo { justify-self: start; }
+  .header__menu-btn { display: none; }
+  .hero__inner { padding-block: 72px 128px; }
+  .why__grid { grid-template-columns: repeat(4, 1fr); }
+  .mag-grid { grid-template-columns: repeat(3, 1fr); }
+  .pgrid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; }
+}
+
+@media (min-width: 1280px) {
+  .hero__content { max-width: 680px; }
+}
+
+/* ---------- چاپ ---------- */
+@media print {
+  .announce, .header, .bottom-nav, .to-top, .cursor-glow, .scroll-progress, .preloader, .hero__canvas { display: none !important; }
+  body { background: #fff; color: #000; }
+}

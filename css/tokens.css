@@ -1,0 +1,111 @@
+/* ==========================================================================
+   ماه‌رخ — توکن‌های طراحی (رنگ، فونت، فاصله، سایه)
+   همهٔ رنگ‌ها و اندازه‌های سایت از همین‌جا کنترل می‌شود.
+   برای تغییر هویت بصری برند، فقط همین فایل را ویرایش کنید.
+   ========================================================================== */
+
+:root {
+  /* ---------- فونت‌ها ---------- */
+  --font-body: 'Vazirmatn', 'Vazir', 'Segoe UI', Tahoma, system-ui, sans-serif;
+  --font-brand: 'Aref Ruqaa', 'Vazirmatn', 'Segoe UI', serif;
+
+  /* ---------- پالت برند: شبِ بنفش، ارکیده، رزگلد، مرواریدی ---------- */
+  --night-950: #120824;
+  --night-900: #1a0c33;
+  --night-800: #25134a;
+  --plum-700: #4a1d7a;
+  --plum-500: #7a3fb5;
+  --orchid-600: #b02a7e;
+  --orchid-500: #c9338f;
+  --orchid-400: #e259ad;
+  --orchid-300: #f08cc8;
+  --rose-400: #f2b5a0;
+  --rose-500: #e4937a;
+  --aqua-300: #78e6d6;
+  --gold-400: #e8c27a;
+  --gold-500: #cf9f3f;
+
+  /* ---------- تم روشن (پیش‌فرض) ---------- */
+  --bg: #fbf6fd;
+  --bg-soft: #f4eaf9;
+  --surface: #ffffff;
+  --surface-2: #f8effb;
+  --ink: #26123f;
+  --ink-soft: #5b4676;
+  --ink-mute: #6f5a8a;
+  --line: rgba(74, 29, 122, 0.13);
+  --line-strong: rgba(74, 29, 122, 0.28);
+  --accent: var(--orchid-500);
+  --accent-deep: var(--orchid-600);
+  --accent-text: var(--orchid-600);
+  --accent-soft: rgba(201, 51, 143, 0.1);
+  --glass: rgba(255, 255, 255, 0.78);
+  --tint-o: 0.3;
+  --star: #e5a323;
+  --ok: #1d9a6c;
+  --danger: #cf3b55;
+
+  --sh-1: 0 1px 2px rgba(38, 18, 63, 0.06), 0 8px 20px -8px rgba(38, 18, 63, 0.16);
+  --sh-2: 0 24px 48px -20px rgba(74, 29, 122, 0.4);
+  --sh-3: 0 40px 80px -24px rgba(38, 18, 63, 0.55);
+
+  /* ---------- گوشه‌ها ---------- */
+  --r-xs: 8px;
+  --r-sm: 12px;
+  --r-md: 20px;
+  --r-lg: 32px;
+  --r-pill: 999px;
+
+  /* ---------- ابعاد ---------- */
+  --container: 1280px;
+  --gutter: 20px;
+  --header-h: 72px;
+  --bottom-nav-h: 0px;
+
+  /* ---------- حرکت ---------- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-io: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* ---------- لایه‌ها ---------- */
+  --z-header: 50;
+  --z-backdrop: 80;
+  --z-drawer: 90;
+  --z-modal: 100;
+  --z-toast: 120;
+  --z-preloader: 200;
+}
+
+/* ---------- تم تاریک ---------- */
+[data-theme='dark'] {
+  --bg: #140a26;
+  --bg-soft: #1c0e35;
+  --surface: #231245;
+  --surface-2: #2c1856;
+  --ink: #f6eefb;
+  --ink-soft: #cdbde3;
+  --ink-mute: #a592c2;
+  --line: rgba(255, 255, 255, 0.13);
+  --line-strong: rgba(255, 255, 255, 0.28);
+  --accent-text: var(--orchid-300);
+  --accent-soft: rgba(240, 140, 200, 0.14);
+  --glass: rgba(20, 10, 38, 0.78);
+  --tint-o: 0.2;
+
+  --sh-1: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 20px -8px rgba(0, 0, 0, 0.5);
+  --sh-2: 0 24px 48px -20px rgba(0, 0, 0, 0.7);
+  --sh-3: 0 40px 80px -24px rgba(0, 0, 0, 0.8);
+  color-scheme: dark;
+}
+
+@media (min-width: 640px) {
+  :root { --gutter: 28px; }
+}
+
+@media (min-width: 1024px) {
+  :root { --gutter: 40px; --header-h: 80px; }
+}
+
+@media (max-width: 767px) {
+  :root { --bottom-nav-h: 68px; }
+}

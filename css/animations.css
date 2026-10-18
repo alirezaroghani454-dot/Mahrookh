@@ -1,0 +1,135 @@
+/* ==========================================================================
+   ماه‌رخ — انیمیشن‌ها: کی‌فریم‌ها، پیش‌بارگذاری (فازهای ماه)،
+   ورود عناصر، و احترام به تنظیم «کاهش حرکت» سیستم‌عامل
+   ========================================================================== */
+
+/* ---------- کی‌فریم‌ها ---------- */
+@keyframes announce-flow { to { background-position: 200% 0; } }
+@keyframes badge-bump { 0% { transform: scale(1); } 40% { transform: scale(1.55); } 100% { transform: scale(1); } }
+@keyframes float-y { 0%, 100% { translate: 0 0; } 50% { translate: 0 -20px; } }
+@keyframes scroll-dot { 0% { opacity: 0; transform: translateY(0); } 30% { opacity: 1; } 100% { opacity: 0; transform: translateY(18px); } }
+@keyframes marquee { to { transform: translateX(-50%); } }
+@keyframes heart-pop { 0% { transform: scale(1); } 30% { transform: scale(1.45); } 60% { transform: scale(0.9); } 100% { transform: scale(1); } }
+@keyframes item-in { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: none; } }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+@keyframes toast-in { from { opacity: 0; transform: translateY(32px) scale(0.9); } to { opacity: 1; transform: none; } }
+@keyframes toast-out { to { opacity: 0; transform: translateY(16px) scale(0.95); } }
+@keyframes flip-in { 0% { transform: rotateX(-90deg); opacity: 0.2; } 100% { transform: rotateX(0); opacity: 1; } }
+@keyframes cube-spin {
+  0% { transform: rotateX(-20deg) rotateY(0deg); }
+  50% { transform: rotateX(-6deg) rotateY(180deg); }
+  100% { transform: rotateX(-20deg) rotateY(360deg); }
+}
+@keyframes rise { from { opacity: 0; transform: translateY(36px); } to { opacity: 1; transform: none; } }
+@keyframes card-in { from { opacity: 0; transform: translateY(40px) scale(0.96); } to { opacity: 1; transform: none; } }
+@keyframes chip-in { from { opacity: 0; scale: 0.6; } to { opacity: 1; scale: 1; } }
+@keyframes confetti-fall {
+  0% { transform: translate3d(0, 0, 0) rotate(var(--r)); }
+  100% { transform: translate3d(var(--dx), 112vh, 0) rotate(calc(var(--r) + 760deg)); }
+}
+@keyframes moon-phase { 0% { transform: translateX(0); } 100% { transform: translateX(112%); } }
+@keyframes fade-up { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+/* ---------- پیش‌بارگذاری: فازهای ماه ---------- */
+body.is-loading { overflow: hidden; }
+
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-preloader);
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 6px;
+  background: radial-gradient(60% 50% at 50% 40%, var(--night-800), var(--night-950));
+  color: #fff;
+  clip-path: circle(150% at 50% 50%);
+  transition: clip-path 1.05s var(--ease-io), visibility 0s linear 1.05s;
+}
+.preloader.is-done { clip-path: circle(0% at 50% 50%); visibility: hidden; pointer-events: none; }
+.pre__moon {
+  position: relative;
+  width: 104px;
+  height: 104px;
+  overflow: hidden;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #ffffff, #f8dcef 38%, #e259ad 100%);
+  box-shadow: 0 0 70px rgba(226, 89, 173, 0.55);
+}
+.pre__moon::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: var(--night-900);
+  animation: moon-phase 2.2s var(--ease-io) infinite alternate;
+}
+.pre__word {
+  margin-top: 20px;
+  font-family: var(--font-brand);
+  font-size: 2.8rem;
+  line-height: 1.5;
+  opacity: 0;
+  animation: fade-up 0.9s var(--ease-out) 0.2s forwards;
+}
+.pre__bar { width: 170px; height: 3px; overflow: hidden; border-radius: 3px; background: rgba(255, 255, 255, 0.18); }
+.pre__bar i {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform-origin: right center;
+  transform: scaleX(var(--p, 0));
+  background: linear-gradient(270deg, var(--aqua-300), var(--orchid-400));
+  transition: transform 0.3s ease-out;
+}
+
+/* ---------- ورود عناصر هیرو (بعد از پیش‌بارگذاری) ---------- */
+html.js .hero__content > * { opacity: 0; }
+html.js .hero__chip { opacity: 0; }
+html.js .hero__scroll { opacity: 0; }
+
+body.is-ready .hero__content > * {
+  animation: rise 1s var(--ease-out) forwards;
+  animation-delay: calc(var(--n, 0) * 0.14s + 0.15s);
+}
+body.is-ready .hero__title { opacity: 1; animation: none; }
+body.is-ready .hero__title .w {
+  display: inline-block;
+  opacity: 0;
+  animation: rise 0.9s var(--ease-out) forwards;
+  animation-delay: calc(var(--w, 0) * 0.09s + 0.1s);
+}
+body.is-ready .hero__chip {
+  animation: chip-in 1s var(--ease-spring) forwards;
+  animation-delay: calc(var(--n, 0) * 0.2s + 1s);
+}
+body.is-ready .hero__scroll { animation: fade-up 1s var(--ease-out) 1.6s forwards; }
+
+/* ---------- ورود عناصر هنگام اسکرول ---------- */
+html.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(34px);
+  transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out);
+  transition-delay: calc(var(--d, 0) * 80ms);
+}
+html.js [data-reveal='scale'] { transform: scale(0.94); }
+html.js [data-reveal].is-in { opacity: 1; transform: none; }
+
+/* ورود کارت‌های محصول (انیمیشن «backwards» تا افکت hover را قفل نکند) */
+.pcard--enter { animation: card-in 0.7s var(--ease-out) backwards; animation-delay: calc(var(--i, 0) * 55ms); }
+
+/* ---------- کاهش حرکت ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.001ms !important;
+    transition-delay: 0ms !important;
+  }
+  html.js [data-reveal] { opacity: 1; transform: none; }
+  html.js .hero__content > *, html.js .hero__chip, html.js .hero__scroll { opacity: 1; }
+  .marquee__track, .cube { animation: none; }
+  .preloader { display: none; }
+}
