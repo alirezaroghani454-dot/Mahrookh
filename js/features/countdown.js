@@ -26,11 +26,20 @@
         el.classList.add('tick');
       }
     }
+     function update() {
+  var now = new Date();
+  var cfg = (M.data.config && M.data.config.flash) || {};
+  var end;
 
-    function update() {
-      var now = new Date();
-      var end = new Date(now);
-      end.setHours(24, 0, 0, 0);
+  if (cfg.endDate && !isNaN(new Date(cfg.endDate))) {
+    end = new Date(cfg.endDate);            // پایان در یک تاریخ مشخص
+  } else {
+    end = new Date(now);
+    end.setHours(Number(cfg.endHour) || 0, 0, 0, 0);   // ساعت پایان هر شب
+    if (end <= now) end.setDate(end.getDate() + 1);
+  }
+
+    
       var diff = Math.max(0, Math.floor((end - now) / 1000));
       set(hEl, 'h', pad(Math.floor(diff / 3600)));
       set(mEl, 'm', pad(Math.floor((diff % 3600) / 60)));
